@@ -1,0 +1,938 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>天科细菌基因组项目分析报告</title>
+<link href="html/css/style.css" rel="stylesheet" type="text/css">
+<link href="html/css/fancybox.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" media="screen and (min-width:861px) and (max-width:960px)" href="Css/pad_heng.css" />
+<link type="text/css" rel="stylesheet" media="screen and (min-width:601px) and (max-width:860px)" href="Css/pad.css" />
+<link type="text/css" rel="stylesheet" media="screen and (min-width:481px) and (max-width:600px)" href="Css/tel_heng.css" />
+<link type="text/css" rel="stylesheet" media="screen and (max-width:480px)" href="Css/tel.css" />
+<script language="javascript" src="html/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="html/js/jquery.easing.1.3.js"></script>
+<script src="html/js/script.js" type="text/javascript"></script>
+<script type="text/javascript" src="html/js/jquery.fancybox-1.3.1.pack.js"></script>
+<script src="html/js/jquery.albumSlider.min.js" type="text/javascript"></script>
+<!--
+<script type="text/javascript" src="html/js/jquery.mousewheel-3.0.2.pack.js"></script>
+<script type="text/javascript" src="html/js/jquery.fancybox-1.3.1.js"></script>
+<script type="text/javascript" src="html/js/pngobject.js"></script>
+<script src="html/js/jquery.albumSlider.min.js" type="text/javascript"></script>
+-->
+<script type="text/javascript"> 
+
+function displaySubMenu(li) { 
+var subMenu = li.getElementsByTagName("ul")[0]; 
+subMenu.style.display = "block"; 
+} 
+function hideSubMenu(li) { 
+var subMenu = li.getElementsByTagName("ul")[0]; 
+subMenu.style.display = "none"; 
+} 
+
+
+$(function(){
+
+	$('#nav > div').hover(function(){
+		var $this = $(this);
+		$this.find('img').stop().animate({'width':'200px','height':'200px','top':'220px','rigth':'100px','opacity':'1.0'},500,'easeOutBack',function(){
+			$(this).parent().find('ul').fadeIn(700);
+		});
+		$this.find('a:first,h2').addClass('active');
+	},function(){
+		var $this = $(this);
+		$this.find('ul').fadeOut(500);
+		$this.find('img').stop().animate({'width':'60px','height':'60px','top':'0px','rigth':'0px','opacity':'0.1'},5000,'easeOutBack');
+		$this.find('a:first,h2').removeClass('active');
+	});
+	
+	$("a#example1").fancybox({
+			'overlayShow'	: false,
+			'titlePosition' : 'over',
+			'transitionIn'	: 'elastic',
+			'transitionOut'	: 'elastic',
+				
+	});
+	$("#demo1").fancybox({
+	    'transitionIn'	: 'elastic',
+		'transitionOut'	: 'elastic',
+		'titlePosition' : 'inside'
+	});
+	$("a[rel=group]").fancybox({
+		'titlePosition' : 'over',//outside
+		'overlayShow'	: false,
+		'cyclic'        : true,
+		'titleFormat'	: function(title, currentArray, currentIndex, currentOpts) {
+					return '<span id="fancybox-title-over">' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+				}
+	});
+	$("a#showdiv").fancybox({'centerOnScroll':true});
+	$("#ajax").fancybox({'width':400});
+	$("#iframe").fancybox({
+		'width':'75%',
+		'height':'75%',
+		'autoScale':false
+	});
+	$("#swf").fancybox({
+		'autoScale':false
+	});
+	$("#modal").fancybox({
+		'modal':false,
+		'overlayShow':true,
+		'hideOnOverlayClick':false,
+		'hideOnContentClick':false,
+		'enableEscapeButton':false,
+		'showCloseButton':false,
+		'centerOnScroll':true,
+		'autoScale':false,
+		'width':540,
+		'height':360
+	});
+
+});
+
+$(document).ready(function(){
+	$("a#pane01").click(function(){
+	$("div#pop01").toggle();
+	});
+	$("a#pane1").click(function(){
+	$("div#pop1").toggle();
+	});
+	$("a#pane2").click(function(){
+	$("div#pop2").toggle();
+	});
+	$("a#pane3").click(function(){
+	$("div#pop3").toggle();
+	});
+	$("a#pane4").click(function(){
+	$("div#pop4").toggle();
+	});
+	$("a#pane5").click(function(){
+	$("div#pop5").toggle();
+	});
+	$("a#pane6").click(function(){
+	$("div#pop6").toggle();
+	});
+	$("a#pane7").click(function(){
+	$("div#pop7").toggle();
+	});
+	$("a#pane8").click(function(){
+	$("div#pop8").toggle();
+	});
+	$("a#pane9").click(function(){
+	$("div#pop9").toggle();
+	});
+	$("a#pane10").click(function(){
+	$("div#pop10").toggle();
+	});
+	$("a#pane11").click(function(){
+	$("div#pop11").toggle();
+	});
+	$("a#pane12").click(function(){
+	$("div#pop12").toggle();
+	});
+	$("a#pane13").click(function(){
+	$("div#pop13").toggle();
+	});
+	$("a#pane14").click(function(){
+	$("div#pop14").toggle();
+	});
+	$("a#pane15").click(function(){
+	$("div#pop15").toggle();
+	});
+	$("a#pane16").click(function(){
+	$("div#pop16").toggle();
+	});
+	$("a#pane17").click(function(){
+	$("div#pop17").toggle();
+	});
+	$("a#pane18").click(function(){
+	$("div#pop18").toggle();
+	});
+	$("a#pane19").click(function(){
+	$("div#pop19").toggle();
+	});
+	$("a#pane20").click(function(){
+	$("div#pop20").toggle();
+	});
+	$("a#pane21").click(function(){
+	$("div#pop21").toggle();
+	});
+	$("a#pic1").fancybox({
+		'overlayShow'	: false,
+		'transitionIn'	: 'elastic',//fade
+		'transitionOut'	: 'elastic'
+	});
+	$(".leftbar-content2").click(function(){
+	$(".zicaidan").toggle();
+	});
+});
+
+
+// JavaScript Document
+$(document).ready(function(){
+	$('.pic_next').click(function(){
+		
+		if($('.piclist').is(':animated')){
+			$('.piclist').stop(true,true);
+		}/* 避免点击事件重复 */
+		
+		ml = parseInt($('.piclist').css('left'));
+		r = liw - (700 - ml);  /* 700为外部区块.infopic的宽度，15为li之间的距离，即.piclist li的margin-right的值 */
+		if(r<700){
+			s = r - 15;
+		}else{
+			s = 700;
+		}
+		$('.piclist').animate({left: ml - s + 'px'},'slow');			
+	})
+	
+	$('.pic_prev').click(function(){
+		
+		if($('.piclist').is(':animated')){
+			$('.piclist').stop(true,true);
+		}/* 避免点击事件重复 */
+		
+		ml = parseInt($('.piclist').css('left'));
+		if(ml>-700){
+			s = ml;
+		}else{
+			s = -700;
+		}
+		$('.piclist').animate({left: ml - s + 'px'},'slow');			
+	})
+	
+})
+//info pic
+$(window).load(function(){
+	liw = 0;
+	$('.piclist li').each(function(){
+		liw += $(this).width()+15;
+		$(this).css('width',$(this).width()+'px');
+	})
+	$('.piclist').width( liw + 'px');
+})
+
+$(function(){
+	//纵向，默认，移动间隔2
+    $('div.albumSlider').albumSlider();
+    //横向设置
+    $('div.albumSlider-h').albumSlider({direction:'h',step:3});
+	 //横向设置
+    $('div.albumSlider-h2').albumSlider({direction:'h',step:3});
+});
+</script> 
+	
+</head>
+
+<body>
+<div id="HOMEmenu">
+<div id="wrapmenu">
+<!---------------------------------------- LO GO -------------------------------------------->
+<div class="logo"><a name="HOME"><img  src="./html/images/tk-logo.png" /></a></div>
+<div style="float:right;position:relative;right:10px;top:20px;"><img src="./html/images/tk-weixin.jpg" /></div>
+<div style="float:right;position:absolute;top:40px;right:120px;font-size:12px;">Tel: 0571-56892193<br />
+杭州市西湖区黄姑山路9号天科大厦<br /></div>
+
+<!---------------------------------------- Menu bar ------------------------------------------>
+<div class="menu">
+  <ul class="nav_menu">
+    <li><a href="#实验流程">实验流程</a></li> 
+    <li><a href="#分析流程">分析流程</a></li> 	
+    <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="#分析结果">分析结果</a>
+		<ul id="sublist">
+          <li><a href="#测序数据">测序数据</a></li>
+		  <li><a href="#基因组组装">基因组组装</a></li>
+          <li><a href="#基因功能注释">基因功能注释</a></li>
+          <li><a href="#亚细胞定位">亚细胞定位</a></li>
+		  <li><a href="#前噬菌体预测">前噬菌体预测</a></li>
+		  <li><a href="#基因岛预测">基因岛预测</a></li>
+		  <li><a href="#CRISPR-Cas预测">CRISPR-Cas预测</a></li>
+		  <li><a href="#致病性和耐药性分析">致病性和耐药性分析</a></li>
+		  <li><a href="#CAZy分析">CAZy分析</a></li>
+		</ul>
+	</li>  
+	<li> <a href="./analysisReport_CN.pdf" target="_blank">PDF</a></li>
+  </ul>
+</div>
+</div>
+</div>
+
+
+<div class='leftbar-holder'>
+  <div class='leftbar-wrapper'>
+    <a href='#实验流程'>
+      <div class='leftbar bg-01'>
+        <span class='leftbar-content'>实验流程</span>
+      </div>
+    </a>
+  </div>
+  <div class='leftbar-wrapper'>
+    <a href='#分析流程'>
+      <div class='leftbar bg-02'>
+        <span class='leftbar-content'>分析流程</span>
+      </div>
+    </a>
+  </div>
+  <div class='leftbar-wrapper'>
+    <a href='#分析结果'>
+      <div class='leftbar bg-03'>
+        <span class='leftbar-content2'>分析结果</span>
+		<div class="zicaidan" style="display:none">
+            <ul>
+              <li><a href="#测序数据" ><span style="font-size:7px;margin-left: -50px;">测序数据</span></a></li>
+              <li><a href="#基因组组装" ><span style="font-size:7px;margin-left: -50px;">基因组组装</span></a></li>
+              <li><a href="#基因功能注释" ><span style="font-size:7px;margin-left: -50px;">基因功能注释</span></a></li>
+              <li><a href="#亚细胞定位" ><span style="font-size:7px;margin-left: -50px;">亚细胞定位</span></a></li>
+			  <li><a href="#前噬菌体预测" ><span style="font-size:7px;margin-left: -50px;">前噬菌体预测</span></a></li>
+              <li><a href="#基因岛预测" ><span style="font-size:7px;margin-left: -50px;">基因岛预测</span></a></li>
+              <li><a href="#CRISPR-Cas预测" ><span style="font-size:7px;margin-left: -50px;">CRISPR-Cas预测</span></a></li>
+			  <li><a href="#致病性和耐药性分析" ><span style="font-size:7px;margin-left: -50px;">致病性和耐药性分析</span></a></li>
+			  <li><a href="#CAZY分析" ><span style="font-size:7px;margin-left: -50px;">CAZy分析</span></a></li>
+            </ul>
+            <div class="clear"></div>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div class='leftbar-wrapper'>
+    <a href="./analysisReport_CN.pdf" target="_blank">
+      <div class='leftbar bg-05'>
+        <span class='leftbar-content'>PDF</span>
+      </div>
+    </a>
+  </div>
+      <div class='leftbar-wrapper'>
+    <a href='#HOME'>
+      <div class='leftbar bg-06'>
+        <span class='leftbar-content'>返回顶部</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div id="wrap">
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="title">天科细菌基因组项目分析报告</div>
+<br /><br />
+<br /><br />
+<br /><br />
+<br /><br />
+<br/><center><table border="0" cellpadding="2" cellspacing="1" class="cover_table">
+<tr><td>合同编号</td><td>TK230801S284</td></tr><tr><td>分析类别</td><td>细菌基因组完成图</td></tr><tr><td>报告单位</td><td>浙江天科高新技术发展有限公司</td></tr><tr><td>报告日期</td><td>2023.09.06</td></tr>
+</table></center><br />
+<br /><br /><br /><br /><br /><br /><br />
+<div id="Newpage"></div>
+<div class="article_header"><h2><a name="实验流程">1 实验建库</a></h2></div><div class="header_shadowdot"></div>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;第三代测序技术是指单分子测序技术。DNA测序时，不需要经过PCR扩增，实现了对每一条DNA分子的单独测序。第三代测序技术也叫从头测序技术，即单分子实时DNA测序。
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Oxford Nanopore 成功研发了世界上首例且唯一的纳米孔 DNA 测序仪——MinION。MinION 是一款便携式、实时、长读长、低成本的设备，旨在让任何人，不论是在科学研究、教育、还是在一系列实际应用中，例如疾病/病原体监测、环境监测、食物链监测、自我量化、甚至微重力生物学等领域，都能进行简便的生物分析。自 2015 年开始销售以来，MinION 已被分布在70 余个国家的科学家们广泛使用，助力于他们的科研工作，实现了在传统实验室内和实地环境下的众多应用。</p>
+<center ><img src="./html/images/fig1.png" width=640px /></center>
+<center class="fig">图1.1 纳米孔测序工作原理</center><br />
+<br />
+<h4>GridION X5</h4>
+<p>&nbsp;&nbsp;GridION X5是一款配有集成计算模块的高通量台式测序仪，具有可运行多达五个 MinION 测序芯片的能力。</p>
+<center ><img src="./html/images/fig2.png" width=640px /></center>
+<center class="fig">图1.2 GridION X5</center><br />
+<p>&nbsp;&nbsp;第三代测序技术对样品DNA的要求非常高，我们会对DNA的质量进行严格的质控，以确保测序结果的准确性并获得较长的读长。</p>
+<p>&nbsp;&nbsp;基因组DNA采用Nanopore官方推荐的试剂盒Gentra Puregene Yeast/Bact. Kit (Qiagen, Valencia, CA)进行提取，通过Nanopore连接测序试剂盒构建Nanopore文库，利用Oxford Nanopore Technology测序仪GridION对DNA进行单分子实时测序，获得原始测序数据。</p>
+<h4>2.1.1 DNA样品质控</h4>
+<p>&nbsp;&nbsp;我们采用以下4种方法对DNA进行质控：
+<p>&emsp;&emsp;&emsp;（1）样品的外观性状是否含有杂质；
+<p>&emsp;&emsp;&emsp;（2）1%琼脂糖电泳检测样品是否有降解以及DNA片段大小（大于23K）；
+<p>&emsp;&emsp;&emsp;（3）Nanodrop2000（Thermo Scientific, Rockford, IL）检测DNA纯度（OD260/280在1.8-2.0，260/230在2.0-2.2之间）；
+<p>&emsp;&emsp;&emsp;（4）Qubit fluorometer (Life Technologies, Grand Island, NY)精确地对DNA进行定量，浓度大于80 ng/μl，总量大于5μg量。
+<h4>2.1.2 文库构建及质量检测</h4>
+<p>&nbsp;&nbsp;DNA样本质检合格后，有两种方案：
+<p>（1）连接法   基因组DNA进行损伤修复（NEBNext FFPE DNA Repair Mix）；在DNA 片段两端进行末端修复加A反应，并连接barcode（EXP-NBD103）；按比例混合各文库，随后 使用SQK-LSK108连接试剂盒连接测序接头，最后用Qubit 精确定量DNA文库；</p>
+<p>（2）快速法（转座酶法）  建库采用的条形码试剂盒为SQK-RBK004，转座酶法进行DNA片段化并连接barcode，按比例混合各文库后连接测序接头，最后用Qubit 精确定量DNA文库。</p>
+<center ><img src="./html/images/fig3.png" /></center>
+<center class="fig">图1.3 文库构建流程</center><br />
+<br /><br />
+<hr />
+<h4>2.1.3 DNA测序</h4>
+<p>&nbsp;&nbsp;文库构建完成后，将一定浓度和体积的DNA 文库加入到每个独立的Flow cell中，并将Flow cell转移到GridION X5测序仪进行实时单分子测序。</p>
+<p>&nbsp;&nbsp;使用的芯片类型为FLO-MIN106 (R9.4.1)，它是Nanopore 1D测序的一种，只测了DNA双链中的一条链。这种技术每个纳米孔每秒钟可以测得450个碱基，每个芯片可以支持512个纳米孔同时测序，而GridION X5测序仪可以同时上机5个芯片进行测序。</p>
+<center ><img src="./html/images/fig4.png" /></center>
+<center class="fig">图1.4  Flow cell</center><br />
+<br/><br/>
+
+<div id="Newpage"></div>
+<div class="article_header"><h2><a name="分析流程">2 分析流程</a></h2></div><div class="header_shadowdot"></div>
+<p>&nbsp;&nbsp;经过了DNA 提取、建库、测序多个步骤得到了测序数据的raw data，很可能含有接头，或者包含测序错误碱基质量较低的reads，这些reads会影响后续分析结果,信息分析前需要去除这些reads。我们对下机数据去接头、过滤质量较低的数据，过滤步骤如下：<ul style="text-indent: 2em;"><li>（1）去除
+掉接头部分的碱基；</li><li>（2）去除接头自连的序列；</li><li>（3）去除掉碱基错误率高的序列；</li></ul></p>
+<p>&nbsp;&nbsp;利用高质量序列进行后续生物信息分析，生物信息分析的主要内容如下：<ul><li>1）数据过滤;</li><li>2）基因组组装;</li><li>3）基因组重复序列分析;</li><li>4）基因组功能预测;</li><li>5）亚细胞定位、前噬菌体、基因岛等其它预测。</li></ul></p>
+<center><a id="example1" href="./html/images/analysis.flow.png"><img src="./html/images/analysis.flow.png" /></a><p>图2.1 信息分析流程图</p></center><font  size =2px
+color="grey">注：实际所做的分析内容见第三章分析结果。</font></p></center><p>&nbsp;&nbsp;&nbsp;&nbsp;图2.1 描述的是信息分析步骤：由测序仪所得的数据称为raw data，随后要对raw data进行质控(QC)，以确定测序数据是否适合用于后续分析。质控后，对reads进行基因组组装，得到能反映样品基因组基本情况的序列文件，并对组装结果进行评价。从最终的组装结果出发，进行基因组组分分析以及基因功能分析等。<br/><br/>
+<div id="Newpage"></div><br />
+<div class="article_header"><h2><a name="分析结果">3 分析结果</a></h2></div><div class="header_shadowdot"></div>
+<br />
+<div class="article_header2"><h3><a name="测序数据"></a>3.1 测序数据处理</h3></div>
+<h4><a name="数据预处理">3.1.1 数据预处理</a></h4>
+<p>&nbsp;&nbsp;Nanopore平台下机数据格式为FAST5格式,每条read都有各自的FAST5文件,除碱基信息,还含有信号数据及其他宏数据,所以read文件大小远大于read碱基大小。为方便客户分析我们会将FAST5文件转化为FASTQ格式再进行后续分析。我们对下机数据去接头、过滤质量较低得到有效数据。</p>
+<div>
+<center><table class="three_line_table">
+<caption>表3.1 GridION 测序统计</caption>
+<tr class="first"><td>sample</td><td>Total raw bases</td><td>Number of raw reads</td><td>Mean read length</td><td>Mean read quality</td><td>clean bases</td><td>clean reads</td><td>Mean clean read Length</td><td>Mean clean read quality</td><td>clean read N50 length</td><td>effective(%)</td></tr><tr><td>2023_JSZJ_022</td><td>1,031,629,715</td><td>103,940</td><td>9,925.2</td><td>10.7</td><td>1,031,402,295</td><td>103,692</td><td>9,946.8</td><td>10.7</td><td>19,374</td><td>99.98</td></tr>
+</table></center><br />
+
+<span class="exa">
+<ul>
+<li>（1）Total raw bases &emsp;&emsp;&emsp;&emsp;下机的碱基数目</li>
+<li>
+（2）Raw reads	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;下机的reads条数
+</li>
+<li>
+（3）Mean read length	&emsp;&emsp;&emsp;&emsp;下机数据的平均长度
+</li>
+<li>
+（4）Mean read quality	&emsp;&emsp;&emsp;&emsp;下机数据的平均质量
+</li>
+<li>
+（5）clean bases	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;去掉低质量reads以及接头后的碱基数
+</li>
+<li>
+（6）clean reads	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;去掉低质量reads以及接头后的passreads数目
+</li>
+<li>
+（7）Mean clean read Length	&emsp;&emsp;&emsp;&emsp;去掉低质量reads以及接头后的passreads平均长度
+</li>
+<li>
+（8）Mean clean read quality	&emsp;&emsp;&emsp;&emsp;去掉低质量reads以及接头后的passreads的平均质量
+</li>
+<li>
+（9）clean read N50 length 	&emsp;&emsp;&emsp;&emsp;去掉低质量reads以及接头后的passreads的N50长度
+</li>
+<li>
+（10）effective(%)	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;有效数据占比=clean bases*100/Total raw bases
+</li>
+<li>
+</ul></span>
+<h4>Nanopore Clean data 长度分布图:</h4>
+<center><img  src="./results/00.Reads/2023_JSZJ_022.readslength.png" width="600px"></center>
+<center class="fig">图3.1 Clean data 长度分布图</center><br />
+<br />
+<p>&nbsp;&nbsp;Illumina高通量测序仪（如Hiseq2500/Hiseq4000/HiseqX/Miseq）测序得到的原始文件是图像文件，在进行碱基识别（base calling）和Bcl2Fastq转化后，即可得到FASTQ（简称fq）格式的原始测序序列（Sequenced reads），称之为raw data或raw reads。我们对下机数据去接头、过滤质量较低得到有效数据。</p>
+<div>
+<center><table class="three_line_table">
+<caption>表3.2 二代测序统计</caption>
+<tr class="first"><td>sample</td><td>Raw Reads</td><td>Raw Base</td><td>Clean Reads</td><td>Clean Base</td><td>Effective Rate(%)</td><td>Clean Q>20(%)</td><td>Clean Q>30(%)</td><td>Clean GC(%)</td></tr><tr><td>2023_JSZJ_023</td><td>10,036,904</td><td>1,515,572,504</td><td>8,861,806</td><td>1,045,071,930</td><td>88.29</td><td>93.53</td><td>88.88</td><td>49.48</td></tr><tr><td>2023_JSZJ_022</td><td>7,707,432</td><td>1,163,822,232</td><td>6,549,662</td><td>786,533,370</td><td>84.98</td><td>93.70</td><td>89.24</td><td>50.03</td></tr>
+</table></center><br />
+
+<span class="exa">
+<ul>
+<li>（1）Sample：样品名称</li>
+<li>
+（2）Raw reads：下机的reads条数
+</li>
+<li>
+（3）Raw bases：下机的碱基数目
+</li>
+<li>
+（4）Clean reads：去掉低质量reads以及接头后的reads数
+</li>
+<li>
+（5）clean bases：去掉低质量reads以及接头后的碱基数
+</li>
+<li>
+（6）Effective Rate(%)：过滤后得到的Clean reads占原始下机reads的比例
+</li>
+<li>
+（7）Q>20(%)：为Q>20 read条数占clean reads 条数的百分比
+</li>
+<li>
+（8）Q>30(%)：为Q>30 read条数占clean reads 条数的百分比
+</li>
+<li>
+</ul></span>
+<br />
+<div id="Newpage"></div>
+<h4>Clean data 碱基分布图:</h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;GC含量分布情况用于检测有无AT、GC 分离现象，这种现象可能是测序或者建库所带来的，一定程度上会影响分析的准确性。 在illumina测序平台的转录组测序中，反转录成cDNA时所用的6bp的随机引物会引起前几个位置的核苷酸组成存在一定的偏好性。而这种偏 好性与测序的物种和实验室环境无关，但会影响转录组测序的均一化程度(Hansen et al .)。除此之外，理论上G和C碱基及A和T碱基含量每个测序循环上应分别相等，且整个测序过程稳定不变，呈水平线。对于转录组测序来说，由于随机引物扩增偏差等原因，常常会导致在测序得到的每个 read前6-7个碱基有较大的波动，这种波动属于正常情况。各样品的Clean Reads的GC分布情况如下:</p>
+<center><a id="example1" href="./results/00.Reads/2023_JSZJ_022.clean.base.png"><img src="results/00.Reads/2023_JSZJ_022.clean.base.png" width=60% /></a></center><br />
+<center class="fig">图3.3 Clean data 碱基分布图</center><br />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;X轴上，中间蓝色虚线左边代表read1的碱基位置，中间蓝色虚线右边代表read2的碱基位置。碱基组成平衡的情况下，A、T曲线几乎重合，G、C曲线几乎重合。如果测序中出现不正常的情况，碱基组成就可能会出现不同程度的波动。</p>
+<div class="result">&nbsp;&nbsp;结果目录见：<a href="results/00.Reads/">results/00.Reads/*.clean.base.png</a></div>
+<br />
+<div id="Newpage"></div>
+<h4>Clean data 质量分布图:</h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;统计测序clean 
+Data的质量分布，图中横轴表示测序reads的碱基排列，纵轴表示质量得分值。一般情况下，随着测序读长的增加质量值会稍微下降。结合Q20值来判断分布图是否正常。</p>
+<center><a id="example1" href="./results/00.Reads/2023_JSZJ_022.clean.quality.png"><img src="results/00.Reads/2023_JSZJ_022.clean.quality.png" width=60% /></a></center><br />
+<center class="fig">图3.4 Clean data 质量分布图</center><br />
+<br />
+
+<p>&nbsp;&nbsp;每个碱基测序准确率是通过测序Phred数值(Phred  score,  Qphred)得到，而Phred 数值是在碱基识别(Base Calling)过程中通 过一种预测碱基判别发生错误概率模型计算得到的，对应关系如下表所显示：
+<br/><center><table class="cover_table">
+<caption>碱基识别准确率与Phred分值之间的简明对应表</caption>
+
+<tr><th>碱基正确识别率</th><th>Phred分值</th><th>测序质量值</th></tr>
+<tr><td >90%</td><td> 10 </td><td>Q10</td></tr>
+<tr><td >99% </td><td>20</td><td> Q20</td></tr>
+<tr><td >99.9%</td><td> 30 </td><td>Q30</td></tr>
+<tr><td >99.99%</td><td> 40 </td><td>Q40</td></tr>
+</table></center><br/>
+
+<br /><br /><div class="result">&nbsp;&nbsp;结果目录见：<a href="./results/00.Reads" target="_blank">./results/00.Reads</a></div>
+<div id="Newpage"></div>
+<div class="article_header2"><h3><a name="基因组组装"></a>3.2 基因组组装</h3></div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;利用 Unicycler (v0.4.5) (<a class="link" href="https://github.com/rrwick/Unicycler">https://github.com/rrwick/Unicycler</a>)[7]软件对reads进行基因组组装，得到能反映样品基因组基本信息的序列文件，并对组装结果进行评价。
+<h4><a name="基因组组装">3.2.1 基因组组装</a></h4>
+<div>
+<center><table class="three_line_table">
+<caption>表3.3 最终基因组大小和GC含量统计</caption>
+<tr class="first"><td>Contig</td><td>A</td><td>T</td><td>C</td><td>G</td><td>N</td><td>Genome Size</td><td>GC content</td></tr><tr><td>Total</td><td>1,185,393</td><td>1,184,415</td><td>1,281,149</td><td>1,286,241</td><td>0</td><td>4,937,198</td><td>0.520010</td></tr><tr><td>contig_1</td><td>1,117,544</td><td>1,118,280</td><td>1,221,905</td><td>1,224,742</td><td>0</td><td>4,682,471</td><td>0.522512</td></tr><tr><td>contig_2</td><td>66,673</td><td>64,945</td><td>58,192</td><td>60,650</td><td>0</td><td>250,460</td><td>0.474495</td></tr><tr><td>contig_3</td><td>1,176</td><td>1,190</td><td>1,052</td><td>849</td><td>0</td><td>4,267</td><td>0.445512</td></tr>
+</table></center><br />
+<h4><a name="基因组评估">3.2.2 基因组评估</a></h4>
+<p>利用Circos(v0.69)(<a class="link" href="http://www.circos.ca/software/download/circos/">http://www.circos.ca/software/download/circos/</a>)[6]进行圈图绘制
+<div class="clearfix albumSlider-h">
+<div class="fullview"> <img src="results/01.Assembly/contig_1.circos.png" 
+alt="" /> </div>
+ <div class="div1">
+<div class="sliders">
+<div class="button movebackward" title="向左滚动"></div>
+<div class="imglistwrap"><ul class="imglist">
+ <li><a id="example1" href="results/01.Assembly/contig_1.circos.png" title="circos_list[0]
+  contig圈图图示"><img src="html/images/contig_1.circos.jpg" alt="contig_1" />contig_1</a></li>
+ <li><a id="example1" href="results/01.Assembly/contig_2.circos.png" title="circos_list[1]
+  contig圈图图示"><img src="html/images/contig_2.circos.jpg" alt="contig_2" />contig_2</a></li>
+ <li><a id="example1" href="results/01.Assembly/contig_3.circos.png" title="circos_list[2]
+  contig圈图图示"><img src="html/images/contig_3.circos.jpg" alt="contig_3" />contig_3</a></li>
+</ul></div>
+<div class="button moveforward" title="向右滚动"></div>
+</div>
+</div>
+</div><center class="fig">图3.4 contig圈图图示</center><br />
+<p>上图中，共有6圈，从内往外依次为：第一个圈展示了GC skew，绿色为GC skew为正值部分，橘色为GC skew为负值部分；第二个圈展示了GC含量；第三个圈展示了rRNA及tRNA注释信息，其中紫色为rRNA信息，红色为tRNA信息；第四圈和第五圈展示CDS注释信息，颜色不同代表的该CDS的COG注释分类不同，其中第四圈为CDS处于负链，第五圈为CDS处于正链；最外圈则展示了总基因组大小。
+<br /><br /><div class="results">&nbsp;&nbsp;结果目录见：<a href="./results/01.Assembly/" target="_blank">./01.Assembly/</a></div><br />
+<div id="Newpage"></div>
+<h4><a name="GCSKEW">3.2.3 GC SKEW</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;GC偏移(GC Skew)指代GC相对含量，其计算公式为GC Skew=(G-C)/(G+C)。在大多数细菌基因组中，前导链和滞后链在碱基组成上存在很明显的不同，前导链富含G和T，滞后链富含A和C；打破G=C的碱基频率发生的偏移，被称之为GC偏移。因为GC偏移在前导链中是正值而在滞后链中为负值，所以GC偏移值是前导链起点、终点以及转变成滞后链的信号，因此GC偏移成为在环状染色体中标记起点和终点的一个有用的工具。</p>
+<div class="clearfix albumSlider-h">
+<div class="fullview"> <img src="results/02.Genome_Assess/GC_Skew/contig_1.GC_skew.png" 
+alt="" /> </div>
+ <div class="div1">
+<div class="sliders">
+<div class="button movebackward" title="向左滚动"></div>
+<div class="imglistwrap"><ul class="imglist">
+ <li><a id="example1" href="results/02.Genome_Assess/GC_Skew/contig_1.GC_skew.png" title="contig_1
+  contig圈图图示"><img src="html/images/contig_1.GC_skew.jpg" alt="contig_1" />contig_1</a></li>
+ <li><a id="example1" href="results/02.Genome_Assess/GC_Skew/contig_2.GC_skew.png" title="contig_2
+  contig圈图图示"><img src="html/images/contig_2.GC_skew.jpg" alt="contig_2" />contig_2</a></li>
+ <li><a id="example1" href="results/02.Genome_Assess/GC_Skew/contig_3.GC_skew.png" title="contig_3
+  contig圈图图示"><img src="html/images/contig_3.GC_skew.jpg" alt="contig_3" />contig_3</a></li>
+</ul></div>
+<div class="button moveforward" title="向右滚动"></div>
+</div>
+</div>
+</div><center class="fig">图3.5 GC偏移</center><br />
+<br /><br /><div class="results">&nbsp;&nbsp;结果目录见：<a href="results/02.Genome_Assess/GC_Skew" target="_blank">results/02.Genome_Assess/GC_Skew</a></div><br />
+<div id="Newpage"></div>
+<h4><a name="重复序列分析">3.2.4 重复序列分析</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;使用MUMmer 3.2.3对每个contig进行自身重复序列比对分析(50bp没有错配)，之后用Mummerplot作图，横、纵坐标基因组。</p>
+<div class="clearfix albumSlider-h">
+<div class="fullview"> <img src="results/02.Genome_Assess/Mummer/contig_1.mummer.png" 
+alt="" /> </div>
+ <div class="div1">
+<div class="sliders">
+<div class="button movebackward" title="向左滚动"></div>
+<div class="imglistwrap"><ul class="imglist">
+ <li><a id="example1" href="results/02.Genome_Assess/Mummer/contig_1.mummer.png" title="contig_1
+  MUMmer统计图"><img src="html/images/contig_1.mummer.jpg" alt="contig_1" />contig_1</a></li>
+ <li><a id="example1" href="results/02.Genome_Assess/Mummer/contig_2.mummer.png" title="contig_2
+  MUMmer统计图"><img src="html/images/contig_2.mummer.jpg" alt="contig_2" />contig_2</a></li>
+ <li><a id="example1" href="results/02.Genome_Assess/Mummer/contig_3.mummer.png" title="contig_3
+  MUMmer统计图"><img src="html/images/contig_3.mummer.jpg" alt="contig_3" />contig_3</a></li>
+</ul></div>
+<div class="button moveforward" title="向右滚动"></div>
+</div>
+</div>
+</div><center class="fig">图3.6 MUMmer统计图</center><br />
+<br /><br /><div class="results">&nbsp;&nbsp;结果目录见：<a href="results/02.Genome_Assess/Mummer" target="_blank">results/02.Genome_Assess/Mummer</a></div><br />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;插入序列(insertion element, IS)是常见的重复序列，是一种简单的转座元件。插入序列具有两个主要特征：1) 相对于其他转座元件，其序列长度较短；2) 只编码具有转座功能的蛋白，这类蛋白通常是转座酶，使得插入序列可以在基因组上移动。方法利用 ISsaga online server(http://issaga.biotoul.fr/ISsaga)。样本不同类型的IS统计：</p>
+<div>
+<center><table class="three_line_table">
+<caption>表3.4 IS预测统计示例展示<caption>
+<tr class="first"><th>Contig</th><th>Sequences producing significant alignments</th><th>IS Family</th><th>Origin</th><th>Score(bits)</th><th>E.value</th></tr>
+<tr><td>contig_1</td><td>ISSty2</td><td>IS3</td><td>Salmonella typhimurium</td><td>2300</td><td>0.0</td></tr>
+<tr><td>contig_1</td><td>IS1230B</td><td>IS3</td><td>Salmonella enteritidis</td><td>2198</td><td>0.0</td></tr>
+<tr><td>contig_1</td><td>IS200F</td><td>IS200/IS605</td><td>Salmonella typhimurium</td><td>1384</td><td>0.0</td></tr>
+<tr><td>contig_1</td><td>IS200</td><td>IS200/IS605</td><td>Salmonella typhimurium</td><td>1308</td><td>0.0</td></tr>
+<tr><td>contig_1</td><td>IS200H</td><td>IS200/IS605</td><td>Salmonella abortusovis</td><td>1271</td><td>0.0</td></tr>
+<tr><td>contig_1</td><td>ISEch12</td><td>IS3</td><td>Dickeya dadantii</td><td>1070</td><td>0.0</td></tr>
+<tr><td>contig_1</td><td>IS285</td><td>IS256</td><td>Yersinia pestis</td><td>1035</td><td>0.0</td></tr>
+<tr><td>contig_1</td><td>ISKpn54</td><td>IS3</td><td>Klebsiella pneumoniae</td><td>1031</td><td>0.0</td></tr>
+<tr><td>contig_1</td><td>ISEc39</td><td>IS256</td><td>Escherichia coli</td><td>991</td><td>0.0</td></tr>
+</table></center>
+</div><br /><br />
+<p>注：<ul>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contig: contig序列名称；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sequence producing significant alignments: 比对上的IS名称；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IS Family: 比对上的IS所属家族名称；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Origin: 比对上的IS所属物种信息；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score(bits): 比对打分；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E.value: 比对上的E-value值；</li>
+</ul><br />
+<br /><br /><div class="results">&nbsp;&nbsp;结果目录见：<a href="results/02.Genome_Assess/IS" target="_blank">results/02.Genome_Assess/IS</a></div><br />
+<div id="Newpage"></div>
+<div class="article_header2"><h3><a name="基因功能注释"></a>3.3 基因功能注释</h3></div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;利用NCBI的prokaryotic annotation pipeline系统进行基因组注释，最终获得注释后的sqn文件，并从sqn文件提取gb文件、gff文件以及蛋白序列。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;通过blast软件将蛋白序列比对到蛋白数据库NR、Swiss-Prot、KEGG、COG（E-value<0.00001）， 并通过blast将蛋白序列比对到核酸数据库Nt(E-value<0.00001)，得到跟给定蛋白序列具有最高序列相似性的蛋白，从而得到该蛋白序列的蛋白功能注释信息。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href='https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/' target='_blank'><b>Nr</b></a> (NCBI non-redundant protein sequences) 是NCBI官方的蛋白序列数据库，它包括了GenBank基因的蛋白编码序列，PDB(Protein DataBank)蛋白数据库、SwissProt蛋白序列及来自PIR（Protein Information Resource）和PDF（Protein Research Foundation）等数据库的蛋白序列。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a class="link" href="http://www.ebi.ac.uk/uniprot" target="_blank"><b>Swiss-Prot</b></a>（A manually annotated and reviewed protein sequence database）搜集了经过有经验的生物学家整理及研究的蛋白序列。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a class="link" href="http://www.genome.jp/kegg" target="_blank"><b>KEGG</b></a>是Kyoto Encyclopedia of Genes and Genomes的简称，是系统分析基因产物和化合物在细胞中的代谢途径以及这些基因产物的功能的数据库。它整合了基因组、化学分子和生化系统等方面的数据,包括代谢通路（KEGG PATHWAY）、药物（KEGG DRUG）、疾病（KEGG DISEASE）、功能模型（KEGG MODULE）、基因序列（KEGG GENES）及基因组（KEGG GENOME）等等。KO（KEGGORTHOLOG）系统将各个KEGG注释系统联系在一起，KEGG已建立了一套完整KO注释的系统，可完成新测序物种的基因组或转录组的功能注释。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a class="link" href="http://www.ncbi.nlm.nih.gov/COG" target="_blank"><b>COG</b></a>: COG是Clusters of Orthologous Groups of proteins的简称，是NCBI的基于基因直系同源关系，针对原核生物。COG结合进化关系将来自不同物种的同源基因分为不同的Ortholog簇，目前COG有4873个分类。来自同一ortholog的基因具有相同的功能，这样就可以将功能注释直接继承给同一COG簇的其他成员。</p>
+<div id="Newpage"></div>
+<h4><a name="功能注释结果统计">3.3.1 功能注释结果统计</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;我们将蛋白序列注释到NR，NT，Swiss-Prot，KEGG，COG库，并分别对注释到每个库以及所有注释上的基因数目进行统计。</p>
+<div>
+<center><table class="three_line_table">
+<caption>表3.5 功能注释统计表</caption>
+<tr class="first"><td>Database</td><td>Annotated Sequence Number</td><td>Annotated Percentage(%)</td></tr><tr><td>NR</td><td>4,499</td><td>99.60</td></tr><tr><td>Swiss-Prot</td><td>3,949</td><td>87.43</td></tr><tr><td>KEGG</td><td>3,733</td><td>82.64</td></tr><tr><td>COG</td><td>3,768</td><td>83.42</td></tr><tr><td>ALL</td><td>4,504</td><td>99.71</td></tr>
+</table></center><br />
+上表说明：NR: NR注释成功的蛋白数目及其占总蛋白数的比例；NT: NT比对成功的蛋白数目及其占总蛋白数目的比例；Swiss-Prot: Swissprot注释成功的蛋白数目及其占总蛋白数的比例；Kegg: Kegg注释成功的蛋白数目及其占总蛋白数的比例；COG: COG注释成功的Unig蛋白ene数目及其占总蛋白数的比例；ALL : 有至少一个数据库注释信息的蛋白数以及所在比例。
+<p>结果文件示例：</p>
+<div class="tc"><table class="three_line_table"><caption>注释结果文件示例</caption><tr class="first"><th>GeneID</th><th>Nr-ID</th><th>Nr-Score</th><th>Nr-Evalue</th><th>Nr-annotation</th><th>Swissprot-ID</th><th>Swissprot-Score</th><th>Swissprot-Evalue</th><th>Swissprot-annotation</th><th>COG-Protein-or-Domain</th><th>COG-Score</th><th>COG-Evalue</th><th>COG-ID</th><th>COG-Function-Description</th><th>KO_id</th><th>KEGG-Evalue</th><th>KEGG-Score</th><th>KEGG-Gene</th><th>ko_definition</th></tr>
+<tr><td>pgaptmp_000001.p01</td><td>gi|4459...</td><td>913...</td><td>0.0...</td><td>MULTISP...</td><td>gi|2014...</td><td>964...</td><td>0.0...</td><td>Chromos...</td><td>NP_4627...</td><td>964...</td><td>0.0...</td><td>0593...</td><td>Chromos...</td><td>K02313...</td><td>0.0...</td><td>966...</td><td>salz:EO...</td><td>chromos...</td></tr><tr><td>pgaptmp_000002.p01</td><td>gi|4465...</td><td>717...</td><td>8.10e-2...</td><td>MULTISP...</td><td>gi|3915...</td><td>752...</td><td>0.0...</td><td>DNA pol...</td><td>NP_4627...</td><td>752...</td><td>0.0...</td><td>0592...</td><td>DNA pol...</td><td>K02338...</td><td>0.0...</td><td>753...</td><td>salz:EO...</td><td>DNA pol...</td></tr><tr><td>pgaptmp_000003.p01</td><td>gi|4459...</td><td>709...</td><td>9.05e-2...</td><td>MULTISP...</td><td>gi|7550...</td><td>737...</td><td>0.0...</td><td>DNA rep...</td><td>NP_4627...</td><td>736...</td><td>0.0...</td><td>1195...</td><td>Recombi...</td><td>K03629...</td><td>0.0...</td><td>737...</td><td>salz:EO...</td><td>DNA rep...</td></tr><tr><td>pgaptmp_000004.p01</td><td>gi|4459...</td><td>1588...</td><td>0.0...</td><td>MULTISP...</td><td>gi|6122...</td><td>1667...</td><td>0.0...</td><td>DNA gyr...</td><td>NP_4627...</td><td>1667...</td><td>0.0...</td><td>0187...</td><td>DNA gyr...</td><td>K02470...</td><td>0.0...</td><td>1667...</td><td>salz:EO...</td><td>DNA gyr...</td></tr><tr><td>pgaptmp_000005.p01</td><td>gi|1545...</td><td>453...</td><td>8.01e-1...</td><td>MULTISP...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td></tr><tr><td>pgaptmp_000006.p01</td><td>gi|4469...</td><td>532...</td><td>6.88e-1...</td><td>MULTISP...</td><td>gi|6806...</td><td>526...</td><td>0.0...</td><td>Sugar p...</td><td>NP_4627...</td><td>546...</td><td>0.0...</td><td>0561...</td><td>Hydroxy...</td><td>K21064...</td><td>2.00e-3...</td><td>133...</td><td>pfri:L8...</td><td>5-amino...</td></tr><tr><td>pgaptmp_000007.p01</td><td>gi|5552...</td><td>677...</td><td>1.08e-2...</td><td>MULTISP...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>WP_0606...</td><td>91.7...</td><td>1.09e-1...</td><td>4842...</td><td>Secrete...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td><td>--...</td></tr></table></div>
+<div class="readme1"><a id="pane6" href="javascript:void(0);" class="button">ReadMe</a></div>
+<div id="pop6" class="pop" style="display:none">
+  <div class="readme_head"><a class="close" href="javascript:void(0);" ></a></div>
+  <div class="readme_code">
+ 
+  注释结果annotation.xls 各列含义（实际结果可能不包含所有数据库）：
+<ul>
+<li> 1) GeneID: 基因ID;</li>
+<li> 2) Nr-ID: 比对到NR库的序列名称;</li>
+<li> 3) Nr-Score: blast比对到NR库的得分;</li>
+<li> 4) Nr-Evalue: blast比对到NR的Evalue值，Evalue 本质上表示的是假阳性率，越小越好;</li>
+<li> 5) Nr-annotation: 比对到NR库的注释信息;</li>
+<li> 6) Nt-ID: 比对到nt库的序列名称;</li>
+<li> 7) Nt-Score: blast比对到nt库的得分;</li>
+<li> 8) Nt-Evalue: blast比对到nt的Evalue值，Evalue 本质上表示的是假阳性率，越小越好;</li>
+<li> 9) Nt-annotation: 比对到nt库的注释信息;</li>
+<li> 10) Swissprot-ID: blast比对到 Swissprot 数据库中序列名;</li>
+<li> 11) Swissprot-Score: blast比对到 Swissprot 数据库的Score ;</li>
+<li> 12) Swissprot-Evalue: blast比对到Swissprot的Evalue值，Evalue 本质上表示的是假阳性率，越小越好;</li>
+<li> 13) Swissprot-annotation: Swissprot 序列的描述;</li>
+<li> 14) COG-Protein-or-Domain: blast比对到COG数据库中的蛋白或结构域;</li>
+<li> 15) COG-Score: blast比对到COG库的得分;</li>
+<li> 16) COG-Evalue: blast比对到COG的Evalue值，Evalue 本质上表示的是假阳性率，越小越好;</li>
+<li> 17) COG-ID: COG的ID;</li>
+<li> 18) COG-Function-Description: COG功能描述;</li>
+<li> 19) KO_id: KO的ID;</li>
+<li> 20) KEGG-Evalue: blast比对到KEGG数据库的Evalue;</li>
+<li> 21) KEGG-Score: blast比对到KEGG数据库的Score;</li>
+<li> 22) KEGG-Gene: blast比对到KEGG数据库中的序列名;</li>
+<li> 23) KO_definition: KO描述.</li>
+  </ul>
+  <br />
+  </div>
+</div>
+<br /><br />
+<div class="result">所有注释结果文件（文件较大，excel打开较慢，请使用Nodepad++或其他文本编辑器打开）<a class="link" href="./results/03.Genome_Function/annotation.xls" target="_blank">annotation.xls</a><p>功能注释各个数据库结果目录见<a class="link" href="./results/03.Genome_Function/" target="_blank">./results/03.Genome_Function/{COG,KEGG,Nr,Nt,Swissprot}</a></p></div>
+<h4><a name="NR库注释">3.3.2 NR库注释</a></h4>
+<p>NR库的注释信息（文件较大，请使用Nodepad++或其他文本编辑器打开）<a href="./results/03.Genome_Function/NR/2023_JSZJ_022.protein.fa.blast.Nr.xls" target="_blank">2023_JSZJ_022.protein.fa.blast.Nr.xls</a>
+<center><a id="example1" href="./results/03.Genome_Function/NR/class_statistics.png" ><img src="./results/03.Genome_Function/NR/class_statistics.png"  width=400px/></a>
+</center><center class="fig">图3.7 NR库注释分类图</center>
+<p>上图中，（A）是基因与Nr库比对的E-value值得分布情况；（B）是基因与Nr库比对相似度的分布情况； （C）是基因与Nr库比对注释到物种的统计情况。
+<p>NR分类图数据
+<p>(A) E-value分布图:&nbsp;&nbsp;<a class="link" href="./results/03.Genome_Function/NR/evalue_statistic.xls" target="_blank">evalue_statistic.xls</a>
+<p>(B) Similarity分布图:&nbsp;&nbsp;<a class="link" href="./results/03.Genome_Function/NR/similarity_statistic.xls" target="_blank">similarity_statistic.xls</a>
+<p>(C) 物种分布图:&nbsp;&nbsp;<a class="link" href="./results/03.Genome_Function/NR/species_statistic.xls" target="_blank">species_statistic.xls</a><br/>
+<div class="results">&nbsp;&nbsp;结果目录见：<a href="./results/03.Genome_Function/NR" target="_blank">./results/03.Genome_Function/NR</a><br /></div>
+<div id="Newpage"></div>
+<h4><a name="COG功能注释">3.3.3 COG功能注释</a></h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;COG是对基因产物进行直系同源分类的数据库，每个COG蛋白都被假定来自祖先蛋白，COG数据库是基于细菌、藻类、真核生物具有完整基因组的编码蛋白、 系统进化关系进行构建的，我们将基因蛋白和COG数据库进行比对，预测可能的功能并对其做功能分类统计，从宏观上认识该物种的基因功能分布特征。</p>
+<p>COG的注释信息（文件较大，请使用Nodepad++或其他文本编辑器打开）<a href="./results/03.Genome_Function/COG/2023_JSZJ_022.protein.fa.cog.gene.annot.xls" target="_blank">2023_JSZJ_022.protein.fa.cog.gene.annot.xls</a>
+<center><a id="example1" href="./results/03.Genome_Function/COG/2023_JSZJ_022.protein.fa.cog.png" ><img src="./results/03.Genome_Function/COG/2023_JSZJ_022.protein.fa.cog.png"  width=640px/></a>
+</center><center class="fig">图3.8 COG注释分类图</center>
+<div class="results">&nbsp;&nbsp;结果目录见：<a href="./results/03.Genome_Function/COG" target="_blank">./results/03.Genome_Function/COG</a><br /></div>
+<h4><a name="KEGG功能注释">3.3.4 KEGG功能注释</a></h4>
+<p>KEGG是系统分析基因产物在细胞中的代谢途径以及这些基因产物的功能的数据库，利用KEGG可以进一步研究基因在生物学上的复杂行为，根据KEGG注释信息我们能进一步得到基因的Pathway注释。
+<p>KEGG Pathway分成3个level，第三层level拥有具体的通路图和响应的基因，我们通过比对将Unigene注释到第三层level 中的通路图上，并且生成html格式，方便查看。</p>
+<p>Unigene代谢通路注释结果文件：<a class="link" href="results/03.Genome_Function/KEGG/2023_JSZJ_022.protein.fa.htm" target="_blank">2023_JSZJ_022.protein.fa.htm</a></p>
+<center><a id="example1" href="results/03.Genome_Function/KEGG/2023_JSZJ_022.protein.fa.path.class.png" ><img src="results/03.Genome_Function/KEGG/2023_JSZJ_022.protein.fa.path.class.png" width=800px/></a>
+</center><center class="fig">图3.9 KEGG分类图</center>
+<p>纵坐标为KEGG代谢通路的名称，横坐标为注释到该通路下的基因个数及其个数占被注释上的基因总数的比例。 将基因根据参与的KEGG代谢通路分
+为5个分支：细胞过程（Cellular Processes），环境信息处理（Environmental Information Processing），遗传信息处理（Genetic
+Information Processing），代谢（Metabolism），有机系统（Organismal Systems）</p>
+第二层Level 分类统计:&nbsp;&nbsp; <a class="link" href="results/03.Genome_Function/KEGG/2023_JSZJ_022.protein.fa.pathway_levels" target="_blank">2023_JSZJ_022.protein.fa.pathway_levels</a>（横轴是注释到各level 3代谢通路的unigene数量，纵轴表示level 2 pathway的子通路。）
+<br /><div class="results">&nbsp;&nbsp;结果目录见：<a href="results/03.Genome_Function/KEGG" target="_blank">results/03.Genome_Function/KEGG</a></div><br /><br />
+<div id="Newpage"></div>
+<div class="article_header2"><h3><a name="亚细胞定位"></a>3.4 亚细胞定位</h3></div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;采用<a href="http://www.psort.org" class="link" target="_blank"><b>PSORTb</b></a>程序进行预测。细菌蛋白经翻译修饰后，最终定位可分成cytoplasm, periplasm, inner or outer membrane等等。蛋白定位分析为预测蛋白功能提供了一些线索（比如，细菌外毒素大多为胞外分泌蛋白）。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;PSORTb根据蛋白序列中的信号肽，折叠motif建立多种模型进行预测，对蛋白的每种可能定位进行打分（分值越高则可靠性越强），最终给出一个综合判断。</p>
+<div>
+<center><table class="three_line_table">
+<caption>表3.6 分泌蛋白分析结果<caption>
+<tr class="first"><th>SeqID</th><th>Localization</th><th>Score</th></tr>
+<tr><td>pgaptmp_000001.p01</td><td>Cytoplasmic</td><td>9.97</td></tr>
+<tr><td>pgaptmp_000002.p01</td><td>Cytoplasmic</td><td>9.97</td></tr>
+<tr><td>pgaptmp_000003.p01</td><td>Cytoplasmic</td><td>9.97</td></tr>
+<tr><td>pgaptmp_000004.p01</td><td>Cytoplasmic</td><td>9.97</td></tr>
+<tr><td>pgaptmp_000005.p01</td><td>Unknown</td><td>-</td></tr>
+<tr><td>pgaptmp_000006.p01</td><td>Cytoplasmic</td><td>8.96</td></tr>
+<tr><td>pgaptmp_000007.p01</td><td>Unknown</td><td>-</td></tr>
+<tr><td>pgaptmp_000008.p01</td><td>Unknown</td><td>-</td></tr>
+<tr><td>pgaptmp_000009.p01</td><td>CytoplasmicMembrane</td><td>9.86</td></tr>
+</table></center>
+</div>
+<p>注：<ul>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SeqID: 蛋白序列名称；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Localization: 预测到的定位位点；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score: 预测的定位得分（>=7.5表示可信度高）；</li>
+</ul><br />
+<br /><div class="results">&nbsp;&nbsp;结果文件见：<a href="results/04.Subcellular_Localization/psortb_results.xls" target="_blank">results/04.Subcellular_Localization/psortb_results.xls</a></div><br /><br />
+<div class="article_header2"><h3><a name="前噬菌体预测"></a>3.5 前噬菌体预测</h3></div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;前噬菌体是插入到细菌环状染色体上或质粒上的噬菌体基因组；在正常条件下，这是一个对细菌细胞不构成伤害的潜在噬菌体。一旦宿主细胞受到伤害，前噬菌体会与细菌基因组脱离，随后利用细菌的复制机制，不断产生新的噬菌体，直到细菌细胞裂解。前噬菌体是基因水平转移的重要组成部分。利用 <a href="http://phaster.ca/" class="link" target="_blank"><b>PHASTER</b></a> (PHAge Search Tool Enhanced Release) 软件，完成 prophage 搜索。</p>
+<div>
+<center><table class="three_line_table">
+<caption>表3.7 前噬菌体分析结果<caption>
+<tr><td>contig</td><td>REGION</td><td>REGION_LENGTH</td><td>COMPLETENESS(score...</td><td>TOTAL_PROTEIN_NUM</td><td>REGION_POSITION</td><td>MOST_COMMON_PHAGE_...</td><td>GC_PERCENTAGE</td></tr>
+<tr><td>contig_1</td><td>1</td><td>47.5Kb</td><td>intact(122)</td><td>51</td><td>1143719-1191256</td><td>PHAGE_Salmon_SEN8_...</td><td>52.54%</td></tr>
+<tr><td>contig_1</td><td>2</td><td>25.5Kb</td><td>incomplete(50)</td><td>16</td><td>1182321-1207826</td><td>PHAGE_Escher_50046...</td><td>54.91%</td></tr>
+<tr><td>contig_1</td><td>3</td><td>8.4Kb</td><td>incomplete(20)</td><td>9</td><td>1486722-1495123</td><td>PHAGE_Escher_50046...</td><td>53.25%</td></tr>
+<tr><td>contig_1</td><td>4</td><td>43.5Kb</td><td>intact(150)</td><td>35</td><td>1987124-2030674</td><td>PHAGE_Salmon_SEN1_...</td><td>47.04%</td></tr>
+<tr><td>contig_1</td><td>5</td><td>22.3Kb</td><td>questionable(70)</td><td>13</td><td>2922970-2945361</td><td>PHAGE_Cronob_vB_Cs...</td><td>53.54%</td></tr>
+<tr><td>contig_1</td><td>6</td><td>20.3Kb</td><td>incomplete(40)</td><td>26</td><td>4299823-4320192</td><td>PHAGE_Burkho_phiE2...</td><td>50.62%</td></tr>
+<tr><td>contig_2</td><td>1</td><td>11.4Kb</td><td>incomplete(20)</td><td>17</td><td>57566-69059</td><td>PHAGE_Escher_RCS47...</td><td>51.26%</td></tr>
+</table></center>
+</div>
+<p>注：<ul>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contig：参考基因组contig；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REGION：区域号；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REGION_LENGTH：区域序列长度(bp)；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COMPLETENESS：区域是否含有完整或不完整前噬菌体的预测；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOTAL_PROTEIN_NUM: 该区域中存在的ORF数量；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REGION_POSITION：该区域在细菌基因组上的起始和终止位点；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOST_COMMON_PHAGE_NAME: 该区域中最相似并且蛋白质数量最多的噬菌体；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GC_PERCENTAGE: 该区域中GC含量；</li>
+</ul><br />
+<br /><div class="results">&nbsp;&nbsp;结果目录见：<a href="results/05.Prophage_Predict" target="_blank">results/05.Prophage_Predict</a></div><br /><br />
+<div class="article_header2"><h3><a name="基因岛预测"></a>3.6 基因岛预测</h3></div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;基因岛(Genomic Island)为细菌基因组中具有横向起源迹象的区域，其编码蛋白具有多种功能(如共生和致病性等)，易于细菌提高自身对于环境的适应性；同时因其具有基因水平转移性质，是研究细菌进化的好材料。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;利用<a href="http://www.pathogenomics.sfu.ca/islandviewer/upload/" class="link" target="_blank"><b>Island Viewer</b></a>软件预测基因组岛，该软件采用了 IslandPath-DIMO, SIGI-HMMM 和 IslanddPick 三种方法来进行预测。</p>
+<div>
+<center><table class="three_line_table">
+<caption>表3.8 基因岛统计示例展示<caption>
+<tr class="first"><th>Island start</th><th>Island end</th><th>Length</th><th>Method</th><th>Gene ID</th><th>Gene name</th><th>Gene start</th><th>Gene end</th><th>Strand</th><th>Product</th></tr>
+<tr><td>22648</td><td>27877</td><td>5229</td><td>Predicted by at least one method</td><td>pgaptmp_000017</td><td>ccmA</td><td>22648</td><td>23265</td><td>1</td><td>cytochrome c biogenesis heme-transporting ATPase CcmA</td></tr>
+<tr><td>22648</td><td>27877</td><td>5229</td><td>Predicted by at least one method</td><td>pgaptmp_000018</td><td>ccmB</td><td>23262</td><td>23921</td><td>1</td><td>heme exporter protein CcmB</td></tr>
+<tr><td>22648</td><td>27877</td><td>5229</td><td>Predicted by at least one method</td><td>pgaptmp_000019</td><td>--</td><td>23973</td><td>24710</td><td>1</td><td>heme ABC transporter permease</td></tr>
+<tr><td>22648</td><td>27877</td><td>5229</td><td>Predicted by at least one method</td><td>pgaptmp_000020</td><td>ccmD</td><td>24707</td><td>24919</td><td>1</td><td>heme exporter protein CcmD</td></tr>
+<tr><td>22648</td><td>27877</td><td>5229</td><td>Predicted by at least one method</td><td>pgaptmp_000021</td><td>ccmE</td><td>24916</td><td>25395</td><td>1</td><td>cytochrome c maturation protein CcmE</td></tr>
+<tr><td>22648</td><td>27877</td><td>5229</td><td>Predicted by at least one method</td><td>pgaptmp_000022</td><td>--</td><td>25392</td><td>27323</td><td>1</td><td>heme lyase CcmF/NrfE family subunit</td></tr>
+<tr><td>22648</td><td>27877</td><td>5229</td><td>Predicted by at least one method</td><td>pgaptmp_000023</td><td>dsbE</td><td>27320</td><td>27877</td><td>1</td><td>thiol:disulfide interchange protein DsbE</td></tr>
+<tr><td>22648</td><td>27877</td><td>5229</td><td>Predicted by at least one method</td><td>pgaptmp_000024</td><td>--</td><td>27874</td><td>28917</td><td>1</td><td>cytochrome c-type biogenesis protein CcmH</td></tr>
+<tr><td>55277</td><td>61713</td><td>6436</td><td>Predicted by at least one method</td><td>pgaptmp_000052</td><td>--</td><td>55277</td><td>55729</td><td>1</td><td>DUF1198 domain-containing protein</td></tr>
+</table></center>
+</div><br /><br />
+<p>注：<ul>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Island Start: 基因岛起始位置；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Island End: 基因岛终止位置；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Length: 基因岛大小；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Method: 注明基因岛预测方法，“ Predicted by at least one method”为将三种方法汇总后的最终的结果；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gene ID: 该基因岛所在的基因ID；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gene name: 该基因岛所在的基因名称；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gene start: 该基因岛所在的基因的起始位置；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gene end: 该基因岛所在的基因的终止位置；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Strand: 该基因岛所在的基因正反链，“1”代表正链，“-1”代表反链；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product: 注释信息；</li>
+</ul><br />
+<br /><div class="results">&nbsp;&nbsp;结果文件见：<a href="./results/06.Gene_Island_Predict/" target="_blank">results/06.Gene_Island_Predict/*Genomic_Island.xls</a></div><br /><br />
+<div id="Newpage"></div>
+<div class="article_header2"><h3><a name="CRISPR预测"></a>3.7 CRISPR预测</h3></div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;CRISPR系统目前发现存在于大多数细菌与所有古菌中的一种后天免疫系统，以消灭外来质体或噬菌体，并在自身基因组中留下外来基因片段作为“记忆”，全名为常间回文重复序列丛集/常间回文重复序列丛集关联蛋白系统(clustered regularly interspaced short palindromic repeats/CRISPR-associated proteins)。用<a href="https://crisprcas.i2bc.paris-saclay.fr/CrisprCasFinder/Index" class="link" target="_blank"><b>CRISPR finder</b></a>)<sub>[5]</sub>软件预测所测细菌基因组中的CRISPR系统/Cas。</p>
+<div>
+<center><table class="three_line_table">
+<caption>表3.9 CRISPR预测统计及说明</caption>
+<tr class="first"><td>
+Sequence</td><td>Element</td><td>CRISPR Id / Cas Type</td><td>Start</td><td>End</td><td>Spacer / Gene</td><td>Repeat consensus / cas genes</td></tr><tr><td>contig_1</td><td>Cas cluster</td><td>CAS-TypeIE</td><td>967635</td><td>976579</td><td>8</td><td>cas3_TypeI;cse1_TypeIE;cse2_TypeIE;cas7_TypeIE;cas5_TypeIE;cas6_TypeIE;cas1_TypeIE;cas2_TypeIE</td></tr>
+</table></center>
+<br />注：<ul>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sequence: 所在contig编号；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Element: 预测CRISPR-Cas系统类型；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRISPR Id / Cas Type: 预测CRISPR的ID 或 Cas类型；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start: 预测CRISPR 或 Cas起始位置；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end: 预测CRISPR 或 Cas终止位置；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spacer / Gene: 预测CRISPR系统spacer序列个数或cas基因个数；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Repeat consensus / cas genes: 预测CRISPR系统spacer序列或cas基因；</li>
+</ul><br />
+<br /><div class="results">&nbsp;&nbsp;结果文件见：<a href="./results/07.Crispr_Predict/" target="_blank">/results/07.Crispr_Predict/*.crisprs.xls</a></div><br /><br />
+<div id="Newpage"></div>
+<div class="article_header2"><h3><a name="致病性和耐药性分析"></a>3.8 致病性和耐药性分析</h3></div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;致病和耐药性分析主要有细菌病原体的毒力因子（VFDB）注释、耐药基因（CARD）注释和碳水化合物活性酶（CAZy）数据库注释。结果以表格或者柱形图展示，这里重点可以关注的数据库有：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='http://www.mgc.ac.cn/VFs/main.htm' target='_blank'><b>VFDB</b></a>数据库全称为 Virulence Factors of Pathogenic Bacteria，是致病细菌、衣原体和支原体的毒力因子数据库，除收录毒力基因的物种信息、基本特征描述外，还提供毒力基因功能和致病机制的详细描述。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用 BLAST 软件，把目标物种的氨基酸序列，与 VFDB 数据库进行比对(E-value<0.00001)，把目标物种的基因和其相对应的功能注释信息结合起来，得到注释结果。由于每一条序列比对结果可能超过一条，为保证其生物意义，注释时我们的筛选条件为：保留一条得分最高且Query_cover大于80%的比对结果作为该基因的注释释。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基于基因组数据，使用 <a href="https://github.com/arpcard/rgi"target="_blank"><b>RGI(Resistance Gene Identifier) 4.0.3</b></a> 软件，通过蛋白同源和蛋白变异来预测抗性基因序列。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://csbl.bmb.uga.edu/dbCAN/"target="_blank"><b>CAZy</b></a> 数据库全称为Carbohydrate-Active enzymes Database，碳水化合物酶相关的专业数据库，内容包括能催化碳水化合物降解、修饰、以及生物合成的相关酶系家族。其主要涵盖 6 大功能类：糖苷水解酶（Glycoside Hydrolases ，GHs），糖基转移酶（Glycosyl Transferases，GTs），多糖裂合酶（Polysaccharide Lyases，PLs），碳水化合物酯酶（Carbohydrate Esterases，CEs），辅助氧化还原酶(Auxiliary Activities , AAs)和碳水化合物结合模块（Carbohydrate-Binding Modules， CBMs）。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用 BLAST 软件，把目标物种的氨基酸序列，与 CAZy数据库进行比对(E-value<0.00001)，把目标物种的基因和其相对应的功能注释信息结合起来，得到注释结果。由于每一条序列比对结果可能超过一条，为保证其生物意义，注释时我们的筛选条件为：保留一条得分最高的比对结果作为该基因的注释。</p>
+<h4>毒力因子注释结果展示表：</h4>
+<div>
+<center><table class="three_line_table">
+<caption>表3.10 VFDB注释示意表</caption>
+<tr class="first"><th>Query_id</th><th>Subject_id</th><th>%Identity</th><th>Gap</th><th>E-value</th><th>Score</th><th>Related genes</th><th>Virulence factors</th><th>Class</th><th>Description</th><th>Query_Coverage...</th></tr>
+<tr><td>pgaptmp_000012.p01</td><td>VFG031738(gi:169631126)</td><td>37.991</td><td>130</td><td>3.23e-39</td><td>135</td><td>regX3</td><td>RegX3</td><td>Regulation</td><td>(regX3) Sensory transduction protein RegX3 [RegX3 (CVF667)] [Mycobacterium abscessus ATCC 19977]</td><td>99.565217391304...</td></tr>
+<tr><td>pgaptmp_000017.p01</td><td>VFG010865(gi:148360498)</td><td>38.624</td><td>114</td><td>3.15e-43</td><td>143</td><td>ccmA</td><td>Cytochrome c muturation (ccm) locus</td><td>Iron uptake</td><td>(ccmA) heme exporter protein CcmA [Cytochrome c muturation (ccm) locus (CVF358)] [Legionella pneumophila str. Corby]</td><td>92.195121951219...</td></tr>
+<tr><td>pgaptmp_000018.p01</td><td>VFG010866(gb|YP_094892)</td><td>40.884</td><td>107</td><td>1.16e-29</td><td>110</td><td>ccmB</td><td>Cytochrome c muturation (ccm) locus</td><td>Iron uptake</td><td>"(ccmB) ABC transporter involved in cytochrome c biogenesis, CcmB subunit [Cytochrome c muturation (ccm) locus (CVF358)] [Legionella pneumophila subsp. pneumophila str. Philadelphia 1]"</td><td>82.648401826484...</td></tr>
+<tr><td>pgaptmp_000019.p01</td><td>VFG045717(gi:289165300)</td><td>47.280</td><td>123</td><td>6.16e-76</td><td>230</td><td>ccmC</td><td>Cytochrome c muturation (ccm) locus</td><td>Iron uptake</td><td>(ccmC) heme exporter protein CcmC [Cytochrome c muturation (ccm) locus (CVF358)] [Legionella longbeachae NSW150]</td><td>97.551020408163...</td></tr>
+<tr><td>pgaptmp_000021.p01</td><td>VFG045719(gi:289165298)</td><td>44.366</td><td>73</td><td>2.73e-38</td><td>127</td><td>ccmE</td><td>Cytochrome c muturation (ccm) locus</td><td>Iron uptake</td><td>(ccmE) cytochrome c-type biogenesis protein CcmE [Cytochrome c muturation (ccm) locus (CVF358)] [Legionella longbeachae NSW150]</td><td>89.308176100628...</td></tr>
+<tr><td>pgaptmp_000022.p01</td><td>VFG045720(gi:289165297)</td><td>52.336</td><td>296</td><td>0.0</td><td>637</td><td>ccmF</td><td>Cytochrome c muturation (ccm) locus</td><td>Iron uptake</td><td>(ccmF) cytochrome C-type biogenesis protein CcmF [Cytochrome c muturation (ccm) locus (CVF358)] [Legionella longbeachae NSW150]</td><td>99.844479004665...</td></tr>
+<tr><td>pgaptmp_000027.p01</td><td>VFG045327(gi:52842404)</td><td>43.796</td><td>74</td><td>1.62e-30</td><td>107</td><td>ibpA</td><td>GspA</td><td>Stress protein</td><td>(ibpA) global stress protein GspA [GspA (VF0167)] [Legionella pneumophila subsp. pneumophila str. Philadelphia 1]</td><td>100...</td></tr>
+</table></center>
+</div>
+<br />注：<ul>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Query_id: 基因ID；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject_id: VFDB数据库中的序列ID；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%Identity: blast比对的一致性（匹配率）；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gap: blast比对的gap个数；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-value: 期望值。E值越低，表明该打分值的显著性越好；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score: blast 比对得分；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Related genes: 注释到的毒力因子基因；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Virulence factors: 毒力基因ID；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class: 毒力因子分类；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description: 毒力因子描述信息；</li>
+</ul><br />
+<br /><div class="results">&nbsp;&nbsp;结果文件见：<a href="./results/08.Pathogen_Analysis/VFDB/VFDB.annot.xls" target="_blank">08.Pathogen_Analysis/VFDB/VFDB.annot.xls</a></div><br /><br />
+<h4>耐药性结果展示表：</h4>
+<div>
+<center><table class="three_line_table">
+<caption>表3.11  CARD注释示意表</caption>
+<tr><td>Query_ID</td><td>Start</td><td>Stop</td><td>Orientation</td><td>ARO_Accession</td><td>Protein</td><td>Identities</td><td>ARO Name</td><td>Model_type...</td></tr>
+<tr><td>contig_1_371</td><td>428668</td><td>429300</td><td>-</td><td>ARO:3000518</td><td>BAE77933.1</td><td>99.05</td><td>CRP</td><td>protein homolog ...</td></tr>
+<tr><td>contig_1_626</td><td>670203</td><td>671024</td><td>+</td><td>ARO:3002986</td><td>AAC76093.1</td><td>97.07</td><td>bacA</td><td>protein homolog ...</td></tr>
+<tr><td>contig_1_1025</td><td>1092026</td><td>1093564</td><td>-</td><td>ARO:3000074</td><td>AAC75733.1</td><td>95.62</td><td>emrB</td><td>protein homolog ...</td></tr>
+<tr><td>contig_1_1026</td><td>1093581</td><td>1094753</td><td>-</td><td>ARO:3000027</td><td>BAA16547.1</td><td>89.49</td><td>emrA</td><td>protein homolog ...</td></tr>
+<tr><td>contig_1_1027</td><td>1094880</td><td>1095410</td><td>-</td><td>ARO:3000516</td><td>NP_417169.1</td><td>93.14</td><td>emrR</td><td>protein homolog ...</td></tr>
+<tr><td>contig_1_1273</td><td>1375799</td><td>1378912</td><td>-</td><td>ARO:3000491</td><td>YP_490697.1</td><td>94.31</td><td>acrD</td><td>protein homolog ...</td></tr>
+<tr><td>contig_1_1276</td><td>1383393</td><td>1384691</td><td>-</td><td>ARO:3004611</td><td></td><td>72.69</td><td>Escherichia coli ampC1 beta-lactamase</td><td>protein homolog ...</td></tr>
+</table></center>
+</div>
+<br />注：<ul>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Query_id: Query名称；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start: 抗性基因比对上该序列的起始位置；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stop: 抗性基因比对上该序列的终止位置；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orientation: 比对方向；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ARO_Accession: CARD数据库中的序列ID；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protein: 对应蛋白序列ID；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Identities: blast比对的一致性（匹配率）；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protein: 对应蛋白序列ID；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ARO Name: 耐药基因名称；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model_type: 耐药基因类型；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SNPs_in_Best_Hit_ARO: SNP类型；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other_SNPs: 其它 SNPs；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drug Class: 耐药分类名称；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resistance Mechanism: 耐药机制；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AMR Gene Family: 耐药基因家族名称；</li>
+</ul><br />
+<br /><div class="results">&nbsp;&nbsp;结果文件见：<a href="./results/08.Pathogen_Analysis/Antibiotic/*.rgi.xls" target="_blank">08.Pathogen_Analysis/Antibiotic/*.rgi.xls</a></div><br /><br />
+<h4>CAZy注释结果如下表所示：</h4>
+<div>
+<center><table class="three_line_table">
+<caption>表3.12  CAZy注释示意表</caption>
+<tr class="first"><th>GeneID</th><th>level1</th><th>level2</th><th>level3</th></tr>
+<tr><td>pgaptmp_003057.p01</td><td>GH</td><td>GH1</td><td>EC 3.2.1.21;EC </td></tr>
+<tr><td>pgaptmp_003106.p01</td><td>GT</td><td>GT2</td><td>EC 2.4.1.12;EC </td></tr>
+<tr><td>pgaptmp_003352.p01</td><td>GH</td><td>GH39</td><td>EC 3.2.1.76;EC </td></tr>
+<tr><td>pgaptmp_003197.p01</td><td>GT</td><td>GT66</td><td>EC 2.4.1.119</td></tr>
+<tr><td>pgaptmp_001854.p01</td><td>GT</td><td>GT41</td><td>EC 2.4.1.94</td></tr>
+<tr><td>pgaptmp_000476.p01</td><td>CBM</td><td>CBM20</td></tr>
+<tr><td>pgaptmp_003706.p01</td><td>GH</td><td>GH108</td><td>EC 3.2.1.17</td></tr>
+</table></center>
+</div>
+<br />注：<ul>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GeneID: 蛋白质序列名称；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level1: 第一层级注释结果；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level2: 第二层级注释结果；</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level3: 第三层级注释结果；</li>
+</ul><br />
+<br /><div class="results">&nbsp;&nbsp;结果文件见：<a href="./results/08.Pathogen_Analysis/CAZy/CAZy.annot.xls" target="_blank">08.Pathogen_Analysis/CAZy/CAZy.annot.xls</a></div><br /><br />
+<div id="Newpage"></div>
+
+<h4>参考文献：</h4>
+<ul class="ref">
+<li><a name="cite1"></a>[1]&nbsp;&nbsp; Overbeek, R., Olson, R., Pusch, G.D., Olsen, G.J., Davis, J.J., Disz, T., Edwards, R.A., Gerdes, S., Parrello, B., Shukla, M., Vonstein, V., Wattam, A.R., Xia, F., Stevens, R., 2014. The SEED and the Rapid Annotation of microbial genomes using Subsystems Technology (RAST). Nucleic acids research 42, D206-214.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li>
+<li><a name="cite2"></a>[2]&nbsp;&nbsp; Yu NY, Wagner JR, Laird MR, et al., 2010. PSORTb 3.0: improved protein subcellular localization prediction with refined localization subcategories and predictive capabilities for all prokaryotes. Bioinformatics 26(13), 1608-1615.</li>
+<li><a name="cite3"></a>[3]&nbsp;&nbsp; Zhou, Y., Liang, Y., Lynch, K.H., Dennis, J.J., Wishart, D.S., 2011. PHAST: a fast phage search tool. Nucleic acids research 39, W347-352.</li>
+<li><a name="cite4"></a>[4]&nbsp;&nbsp;Götz, S. Langille, M.G., Brinkman, F.S., 2009. IslandViewer: an integrated interface for computational identification and visualization of genomic islands. Bioinformatics 25, 664-665.</li>
+<li><a name="cite5"></a>[5]&nbsp;&nbsp;[5].Grissa, I., Vergnaud, G., Pourcel, C., 2007. CRISPRFinder: a web tool to identify clustered regularly interspaced short palindromic repeats. Nucleic acids research 35, W52-57.</li>
+<li><a name="cite6"></a>[6]&nbsp;&nbsp;Grant, J.R., Stothard, P., 2008. The CGView Server: a comparative genomics tool for circular genomes. Nucleic acids research 36, W181-18</li>
+<li><a name="cite6"></a>[7]&nbsp;&nbsp;Ryan R. Wick, Louise M. Judd, Claire L. Gorrie, Kathryn E. Holt, 2017. Unicycler: Resolving bacterial genome assemblies from short and long sequencing reads. PLoS Comput Biol 13(6): e1005595</li>
+
+</ul>
+<h4>结果目录结构</h4>
+<pre>├── 00.Reads	【测序数据处理结果】
+│   ├── *.readslength.png.png	【Nanopore测序长度分布直方图】
+│   ├── Nanopore_reads_stat.xls	【Nanopore测序数据统计表】
+│   ├── *.clean.base.png	【二代测序clean data的碱基分布图】
+│   ├── *.clean.quality.png	【二代测序clean data的碱基质量分布图】
+│   └── AllSamples.stat.xls	【二代测序数据统计表】
+├── 01.Assembly	【组装结果】
+│   ├── *.circos.png	【基因组序列圈图，png格式】
+│   ├── final_assembly_GC_stat.xls	【最终组装的contig统计表】
+│   └── final_assembly.fasta	【优化后的最终完成图序列】
+├── 02.Genome_Assess	【基因组评估结果】
+│   ├── GC_Skew	【GC Skew分析结果】
+│   │   ├── *.GC_skew.pdf	【GC偏移图，pdf格式】
+│   │   ├── *.GC_skew.png	【GC偏移图，png格式】
+│   ├── IS	【IS分析结果】
+│   │   └── *.IS_result.xls	【IS分析结果表格】
+│   └── Mummer	【MUMmer分析结果】
+│       ├── *.mummer.pdf	【MUMmer统计图，pdf格式】
+│       └── *.mummer.png	【MUMmer统计图，png格式】
+├── 03.Genome_Function	【功能注释信息】
+│   ├── annotation_statistic.xls	【注释结果统计表】
+│   ├── annotation.xls	【注释结果汇总表】
+│   ├── COG	【COG注释结果】
+│   │   ├── *.blast.cog.xls	【与COG数据库的blast比对结果】
+│   │   ├── *.cog.class.annot.xls	【COG分类文件（COG类与蛋白的对应关系）】
+│   │   ├── *.cog.gene.annot.xls	【COG注释（蛋白 与COG类的对应关系）】
+│   │   ├── *.cog.pdf	【COG功能分类图（矢量图），pdf格式】
+│   │   └── *.cog.png	【COG功能分类图（标量图），png格式】
+│   ├── KEGG	【KEGG注释结果】
+│   │   ├── *.blast.kegg.xls	【与COG数据库的blast比对结果】
+│   │   ├── *.htm	【蛋白的Pathway分析结果报告】
+│   │   ├── *.ko	【蛋白ID及对应KO号列表】
+│   │   ├── *_map	【蛋白的Pathway图（文件夹）】
+│   │   ├── *.path	【蛋白的Pathway列表】
+│   │   ├── *.path.class.png	【KEGG分类图，png格式】
+│   │   ├── *.path.class.svg	【KEGG分类图，svg格式】
+│   │   ├── *.path.class.xls	【KEGG分类表】
+│   │   └── *.pathway_levels	【第二层Level 分类统计】
+│   ├── NR	【NR注释结果】
+│   │   ├── class_statistics.pdf	【Nr注释E-value、identity和物种分布统计图（矢量图），pdf格式】
+│   │   ├── class_statistics.png	【Nr注释E-value、identity和物种分布统计图（标量图），png格式】
+│   │   ├── evalue_statistic.xls	【Nr注释E-value分布统计结果】
+│   │   ├── *.blast.Nr.xls	【与NR数据库的blast比对结果】
+│   │   ├── similarity_statistic.xls	【Nr注释identity分布统计结果】
+│   │   └── species_statistic.xls	【Nr注释物种分布统计结果】
+│   ├── nt	【nt结果】
+│   │   └── *.blast.Nt.xls	【与Nt数据库的blast比对结果】
+│   ├── Swissprot	【Swissprot注释结果】
+│   │   └──*.blast.Swissprot.xls	【与Swissprot数据库的blast比对结果】
+│   └── faa_gff	【蛋白序列和gff注释结果】
+├── 04.Subcellular_Localization	【蛋白定位分析】
+│   └── psortb_results.xls	【蛋白定位分析结果】
+├── 05.Prophage_Predict	【前噬菌体预测分析】
+│   ├── Salmonella_enterica_LXY.fasta.xls	【前噬菌体预测分析结果】
+│   └── unitig_0.CDS.detail.txt	【前噬菌体预测分析详细结果】
+├── 06.Gene_Island_Predict	【基因岛预测分析】
+│   └── *.Genomic_Island.xls	【基因岛预测分析结果】
+├── 07.Crispr_Predict	【Crisprs预测分析】
+│   └── final_assembly.fasta.crisprs.xls	【Crisprs预测分析结果】
+└── 08.Pathogen_Analysis	【病原细菌致病性和耐药性分析】
+     ├── CARD	【耐药性基因注释分析】
+     │   └── CARD.annot.xls	【耐药性注释结果】
+     ├── CAZy	【CAZy注释分析】
+     │   └── CAZy.annot.xls	【CAZy注释结果】
+     └── VFDB	【毒力因子注释分析】
+            └── VFDB.annot.xls	【毒力因子注释结果】
+</pre><br />
+
+<hr /></div><br /><br /></body></html>  
